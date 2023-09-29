@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modify Reminder</title>
+    <link rel="stylesheet" href="style-modify.css"/>
+  </head>
+  <body style="background-image: url('https://source.unsplash.com/800x600/?nature'); background-size: cover; background-repeat: no-repeat; background-attachment: fixed; display: flex; justify-content: center; align-items: center; min-height: 100vh; overflow: hidden; position: relative;"></body>>
+    <div class="modify-reminder-container">
+      <h1>Modify Reminder</h1>
+      <form id="modify-reminder-form" action="#" method="POST">
+        <div class="form-group">
+          <label for="date">Select Date:</label>
+          <input type="date" id="date" name="date" required />
+        </div>
+        <div class="form-group">
+          <label for="subject">Select Subject:</label>
+          <select id="subject" name="subject" required>
+            <option value="Hindi">Hindi</option>
+            <option value="English">English</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="reminders">Select Reminder:</label>
+          <select id="reminders" name="reminders" required>
+            <option value="Reminder 1">Reminder 1 - Description 1</option>
+            <option value="Reminder 2">Reminder 2 - Description 2</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="description">Description:</label>
+          <textarea
+            id="description"
+            name="description"
+            rows="4"
+            cols="50"
+          ></textarea>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address:</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="contact">Contact Number:</label>
+          <input type="tel" id="contact" name="contact" required />
+        </div>
+        <div class="form-group">
+          <label for="sns">SNS Number:</label>
+          <input type="tel" id="sns" name="sns" required />
+        </div>
+        <div class="form-group">
+          <label>Recurrence:</label>
+          <input
+            type="checkbox"
+            id="recurrence-7days"
+            name="recurrence"
+            value="7 Days"
+          />
+          <label for="recurrence-7days">7 Days</label>
+          <input
+            type="checkbox"
+            id="recurrence-5days"
+            name="recurrence"
+            value="5 Days"
+          />
+          <label for="recurrence-5days">5 Days</label>
+          <input
+            type="checkbox"
+            id="recurrence-3days"
+            name="recurrence"
+            value="3 Days"
+          />
+          <label for="recurrence-3days">3 Days</label>
+          <input
+            type="checkbox"
+            id="recurrence-2days"
+            name="recurrence"
+            value="2 Days"
+          />
+          <label for="recurrence-2days">2 Days</label>
+        </div>
+        
+      </form>
+
+      <div class="action-buttons">
+        <button id="back-button">Back</button>
+        <button id="confirm-button">Confirm</button>
+        <button id="logout-button">Log Out</button>
+      </div>
+    </div>
+
+    <script>
+      const backButton = document.getElementById("back-button");
+
+      const confirmButton = document.getElementById("confirm-button");
+
+      backButton.addEventListener("click", () => {
+        window.location.href = "welcome.html";
+      });
+
+      
+
+      const logoutButton = document.getElementById("logout-button");
+
+      logoutButton.addEventListener("click", () => {
+        sessionStorage.clear();
+
+        window.location.href = "logout.html";
+      });
+    </script>
+  </body>
+</html>

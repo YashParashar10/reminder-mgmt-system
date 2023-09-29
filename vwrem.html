@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>View Reminders</title>
+    <style>
+      /* Updated CSS with additional features and background image from Unsplash */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-image: url('https://source.unsplash.com/800x600/?soldier,anime');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.enable-reminder-container {
+  max-width: 400px;
+  width: 90%;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+h1 {
+  font-size: 28px;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  color: #333;
+}
+
+input[type="date"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+textarea {
+  resize: none;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+@media (max-width: 600px) {
+  .enable-reminder-container {
+      width: 95%;
+  }
+
+  .form-group {
+      margin-bottom: 10px;
+  }
+
+  button {
+      margin-right: 0;
+      margin-bottom: 10px;
+  }
+}
+
+    </style>
+  </head>
+  <body>
+    <h1>View Reminders</h1>
+    <div id="reminders-container"></div>
+    <button id="back-button">Back</button>
+    <button id="delete-reminder-button">Delete Reminder</button>
+    <button id="disable-reminder-button">Disable Reminder</button>
+    <button id="modify-reminder-button">Modify Reminder</button>
+    <button id="logout-button">Log Out</button>
+
+    <script>
+      const backButton = document.getElementById("back-button");
+
+      backButton.addEventListener("click", () => {
+        window.history.back();
+      });
+
+      e;
+      const logoutButton = document.getElementById("logout-button");
+
+      logoutButton.addEventListener("click", () => {
+        sessionStorage.clear();
+
+        window.location.href = "logout.html";
+      });
+
+      const deleteReminderButton = document.getElementById(
+        "delete-reminder-button"
+      );
+      const disableReminderButton = document.getElementById(
+        "disable-reminder-button"
+      );
+      const modifyReminderButton = document.getElementById(
+        "modify-reminder-button"
+      );
+      deleteReminderButton.addEventListener("click", () => {
+        window.location.href = "deleterem.html";
+      });
+
+      disableReminderButton.addEventListener("click", () => {
+        window.location.href = "disrem.html";
+      });
+
+      modifyReminderButton.addEventListener("click", () => {
+        window.location.href = "modifyrem.html";
+      });
+    </script>
+  </body>
+</html>

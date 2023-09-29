@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enable Reminder</title>
+    <style>
+     /* Updated CSS with additional features and background image from Unsplash */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-image: url('https://source.unsplash.com/800x600/?soldier,anime');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.enable-reminder-container {
+  max-width: 400px;
+  width: 90%;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+h1 {
+  font-size: 28px;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  color: #333;
+}
+
+input[type="date"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+textarea {
+  resize: none;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+@media (max-width: 600px) {
+  .enable-reminder-container {
+      width: 95%;
+  }
+
+  .form-group {
+      margin-bottom: 10px;
+  }
+
+  button {
+      margin-right: 0;
+      margin-bottom: 10px;
+  }
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="enable-reminder-container">
+      <h1>Enable Reminder</h1>
+      <form id="enable-reminder-form">
+        <div class="form-group">
+          <label for="select-date">Select Date: </label>
+          <input type="date" id="select-date" name="select-date" required />
+        </div>
+        <div class="form-group">
+          <label for="select-subject">Select Subject:</label>
+          <select id="select-subject" name="select-subject">
+            <option value="subject1">Subject 1</option>
+            <option value="subject2">Subject 2</option>
+            <option value="subject3">Subject 3</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="select-reminder">Reminders:</label>
+          <select id="select-reminder" name="select-reminder">
+            <option value="reminder1">Reminder 1 - Description 1...</option>
+            <option value="reminder2">Reminder 2 - Description 2...</option>
+            <option value="reminder3">Reminder 3 - Description 3...</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="description">Description:</label>
+          <textarea
+            id="description"
+            name="description"
+            rows="4"
+            cols="50"
+            required
+          ></textarea>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address:</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="contact-no">Contact No:</label>
+          <input type="tel" id="contact-no" name="contact-no" required />
+        </div>
+        <div class="form-group">
+          <label for="sms-no">SMS No:</label>
+          <input type="tel" id="sms-no" name="sms-no" required />
+        </div>
+        <div class="form-group">
+          <label>Recur for Next:</label>
+          <input type="checkbox" id="recur-for-next" name="recur-for-next" />
+          <label for="recur-for-next">7 days</label>
+          <input type="checkbox" id="recur-for-next" name="recur-for-next" />
+          <label for="recur-for-next">5 days</label>
+          <input type="checkbox" id="recur-for-next" name="recur-for-next" />
+          <label for="recur-for-next">3 days</label>
+          <input type="checkbox" id="recur-for-next" name="recur-for-next" />
+          <label for="recur-for-next">2 days</label>
+        </div>
+        <div>
+          <button id="back-button" type="button">Back</button>
+          <button id="confirm-button" type="submit">Confirm</button>
+          <button id="logout-button" type="button">Log Out</button>
+        </div>
+      </form>
+    </div>
+    <script>
+      const enableReminderForm = document.getElementById(
+        "enable-reminder-form"
+      );
+
+      enableReminderForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const formData = new FormData(enableReminderForm);
+        const formObject = {};
+        formData.forEach((value, key) => {
+          formObject[key] = value;
+        });
+
+        console.log("Form Data:", formObject);
+
+        window.location.href = "welcome.html";
+      });
+
+      const backButton = document.getElementById("back-button");
+      const logoutButton = document.getElementById("logout-button");
+
+      backButton.addEventListener("click", function () {
+        window.location.href = "welcome.html";
+      });
+
+      logoutButton.addEventListener("click", function () {
+        window.location.href = "logout.html";
+      });
+    </script>
+  </body>
+</html>

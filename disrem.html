@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Disable Reminder</title>
+    <style>
+     /* Updated CSS with an aesthetic image background from Unsplash */
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-image: url('https://source.unsplash.com/800x600/?aesthetic');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+}
+
+.disable-reminder-container {
+  text-align: center;
+  background-color: rgba(215, 246, 169, 0.9);
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.disable-reminder-container h1 {
+  font-size: 24px;
+  color: #333;
+}
+
+.form-group {
+  margin-top: 20px;
+}
+
+label {
+  font-size: 16px;
+  color: #333;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+textarea[readonly] {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.action-buttons {
+  margin-top: 20px;
+}
+
+.action-buttons button {
+  font-size: 16px;
+  padding: 10px 20px;
+  margin: 5px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.action-buttons button:hover {
+  background-color: #0056b3;
+}
+
+p {
+  font-size: 16px;
+  color: #555;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="disable-reminder-container">
+      <h1>Disable Reminder</h1>
+      <div class="form-group">
+        <label for="date">Select Date:</label>
+        <input type="date" id="date" name="date" required />
+      </div>
+      <div class="form-group">
+        <label for="subject">Select Subject:</label>
+        <select id="subject" name="subject" required>
+          <option value="Hindi">Hindi</option>
+          <option value="English">English</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="reminders">Select Reminder:</label>
+        <select id="reminders" name="reminders" required>
+          <option value="Reminder 1">Reminder 1 - Description 1</option>
+          <option value="Reminder 2">Reminder 2 - Description 2</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Description:</label>
+        <textarea id="description" name="description" readonly></textarea>
+      </div>
+      <div class="action-buttons">
+        <button id="back-button">Back</button>
+        <button id="confirm-button">Confirm</button>
+        <button id="logout-button">Log Out</button>
+      </div>
+    </div>
+    <script>
+      document.getElementById("back-button").addEventListener("click", () => {
+        window.location.href = "welcome.html";
+      });
+
+      document
+        .getElementById("confirm-button")
+        .addEventListener("click", () => {
+          alert("Reminder disabled successfully!");
+        });
+
+      const logoutButton = document.getElementById("logout-button");
+
+      logoutButton.addEventListener("click", () => {
+        sessionStorage.clear();
+
+        window.location.href = "logout.html";
+      });
+    </script>
+  </body>
+</html>
